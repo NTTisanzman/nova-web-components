@@ -1,0 +1,42 @@
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.error-container {
+    margin-bottom: 16px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.error-info {
+    display: flex;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.error-icon {
+    height: 40px;
+    width: 40px;
+    margin-right: 20px;
+}
+
+.error-msg {
+    font-size: 28px;
+    font-weight: bold;
+    color: red;
+    margin: 0px;
+}
+
+.more-info {
+    margin-top: 12px;
+}
+
+.more-info-text {
+    font-size: 20px;
+    color: blue;
+}

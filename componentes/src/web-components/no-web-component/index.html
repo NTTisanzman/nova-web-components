@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Hola mundo</title>
+        <link rel="stylesheet" type="text/css" href="./styles.css"/>
+    </head>
+    <body>
+        <p class="parrafo"></p>
+        <button onClick="textoGrande()">TEXTO GRANDE</button>
+    </body>
+    <script>
+        let parrafo = document.querySelector(".parrafo");
+        parrafo.innerHTML = "Hola mundo";
+
+        parrafo.innerHTML = "<strong>Hola mundo</strong>"
+        parrafo.textContent = "<strong>Hola mundo</strong>"
+
+        parrafo.style.color = "red";
+
+        parrafo.classList.add("cursiva");
+
+        function textoGrande() {
+            parrafo.classList.toggle("grande");
+        }
+    </script>
+</html>
