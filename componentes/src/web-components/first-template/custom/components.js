@@ -4,45 +4,42 @@ class MiElementoElement extends HTMLElement {
 
         this.imageSrc = "";
 
+        this.isOk = false;
+
         this.pintado = false;
     }
 
     connectedCallback() {
-        const errorIcon = document.createElement("img");
-        errorIcon.src = this.imageSrc;
-        errorIcon.classList.add("error-icon")
+        const msgIcon = document.createElement("img");
+        msgIcon.src = this.imageSrc;
+        msgIcon.classList.add("msg-icon")
         
-        const errorMsg = document.createElement("p");
-        errorMsg.classList.add("error-msg")
-        errorMsg.textContent = "HA OCURRIDO UN ERROR";
+        const msgText = document.createElement("p");
+        msgText.classList.add(this.isOk ? "msg-text" : "msg-text-error");
+        msgText.textContent = "HA OCURRIDO UN ERROR";
 
         const moreInfoText = document.createElement("p");
         moreInfoText.classList.add("more-info-text")
         moreInfoText.innerHTML = "A veces ocurren estos errores, esperemos que se resuelva todo en breves"
 
-        const errorInfo = document.createElement("div");
-        errorInfo.classList.add("error-info");
+        const msgInfo = document.createElement("div");
+        msgInfo.classList.add("msg-info");
 
-        errorInfo.appendChild(errorIcon);
-        errorInfo.appendChild(errorMsg)
+        msgInfo.appendChild(msgIcon);
+        msgInfo.appendChild(msgText)
 
         const moreInfoContainer = document.createElement("div");
         moreInfoContainer.classList.add("more-info");
 
         moreInfoContainer.appendChild(moreInfoText);
 
-        const errorContainer = document.createElement("div");
-        errorContainer.classList.add("error-container");
+        const container = document.createElement("div");
+        container.classList.add("container");
 
-        errorContainer.appendChild(errorInfo);
-        errorContainer.appendChild(moreInfoContainer);
+        container.appendChild(msgInfo);
+        container.appendChild(moreInfoContainer);
 
-        const main = document.createElement("div");
-        main.classList.add("main");
-
-        main.appendChild(errorContainer);
-
-        this.appendChild(main);
+        this.appendChild(container);
         
 
         this.pintado = true;
@@ -56,18 +53,29 @@ class MiElementoElement extends HTMLElement {
                 this.querySelector(".error-icon").src = nuevoValor;
             }
         }
+        else if (propiedad === "is-ok") {
+            this.isOk = nuevoValor !== "false";
+            if (this.pintado) {
+                let message;
+                if (antiguoValor === "false") {
+                    message = this.querySelector(".msg-text-error");
+                    message.classList.remove("msg-text-error");
+                    message.classList.add("msg-text");
+                }
+                else {
+                    message = this.querySelector(".msg-text");
+                    message.classList.remove("msg-text");
+                    message.classList.add("msg-text-error");
+                }
+
+            }
+        }
 
     }
 
     static get observedAttributes() {
-        return ['image-src']
+        return ['image-src', 'is-ok']
     }
 }
 
 customElements.define("mi-elemento", MiElementoElement)
-
-/**
- * PRIMERO: agregar la prop por medio del getAttribute
- * SEGUNDO: integrarla en this.saludar con el if largo
- * TERCERO: integrarla en el this.saludar por medio de la ternaria
- */

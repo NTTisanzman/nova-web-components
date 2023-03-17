@@ -1,9 +1,10 @@
 .main {
     display: flex;
-    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.error-container {
+.container {
     margin-bottom: 16px;
     width: 500px;
     display: flex;
@@ -13,19 +14,19 @@
     border-radius: 8px;
 }
 
-.error-info {
+.msg-info {
     display: flex;
     align-items: center;
     margin-top: 16px;
 }
 
-.error-icon {
+.msg-icon {
     height: 40px;
     width: 40px;
     margin-right: 20px;
 }
 
-.error-msg {
+.msg-text {
     font-size: 28px;
     font-weight: bold;
     color: red;

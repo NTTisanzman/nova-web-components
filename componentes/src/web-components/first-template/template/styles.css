@@ -1,6 +1,5 @@
 .main {
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 
@@ -27,13 +26,6 @@
 }
 
 .msg-text {
-    font-size: 28px;
-    font-weight: bold;
-    color: green;
-    margin: 0px;
-}
-
-.msg-text-error {
     font-size: 28px;
     font-weight: bold;
     color: red;
