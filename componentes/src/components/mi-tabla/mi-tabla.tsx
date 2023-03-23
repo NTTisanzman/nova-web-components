@@ -90,7 +90,7 @@ export class MiTabla {
 
             {this._elementos.map((item, index)=> 
              (
-              <tr>
+              <tr class={index % 2 === 1 && "--grey"}>
                 <td>{index + 1}</td>
                 <td>{item.nombre}</td>
                 <td>{item.dni}</td>

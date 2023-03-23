@@ -26,14 +26,14 @@ export class MiBoton {
   
   
   
-  triggerButton() {
+  async triggerButton() {
     this.buttonPressed.emit(this.counter);
     this.counter++;
     this.disabled = true;
 
     setTimeout(()=> {
       this.disabled = false;
-    }, 3000)
+    }, 1000)
   }
 
 

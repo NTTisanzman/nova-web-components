@@ -5,3 +5,31 @@
 .mi-input {
   margin: 16px 0;
 }
+
+.--grey {
+  background-color: #cbcbcb;
+}
+
+mi-boton {
+  margin-top: 24px;
+}
+
+table, td, th {
+  border: 1px solid black;
+  border: collapse;
+  border-spacing: 0px;
+}
+
+th {
+  background-color: lightgreen;
+  color: red;
+}
+
+td, th {
+  padding: 4px 6px;
+  text-align: center;
+}
+
+table {
+  border: collapse;
+}
