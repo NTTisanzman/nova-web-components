@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>Custom template</title>
+        <script src="components.js" defer></script>
+        <link rel="stylesheet" type="text/css" href="styles.css"/>
+    </head>
+    <body>
+        <div class="main">
+            <template-element is-ok=true more-info-text="Es genial, todo ha ido perfectamente">
+                <p slot="contenido">TODO HA IDO BIEN</p>
+            </template-element>
+        </div>
+        <template id="mensaje">
+            <link rel="stylesheet" type="text/css" href="styles.css"/>
+            <div class="msg-info">
+                <img class="msg-icon">
+                <slot name="contenido"></slot>
+            </div>
+            <div class="more-info">
+                <p class="more-info-text"></p>
+            </div>
+        </template>
+    </body>
+</html>

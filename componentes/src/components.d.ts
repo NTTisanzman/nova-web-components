@@ -7,6 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MiPrimerComponente {
+        "idioma": string;
     }
     interface MyComponent {
         /**
@@ -22,6 +23,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface SegundoComponente {
+    }
 }
 declare global {
     interface HTMLMiPrimerComponenteElement extends Components.MiPrimerComponente, HTMLStencilElement {
@@ -36,13 +39,21 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLSegundoComponenteElement extends Components.SegundoComponente, HTMLStencilElement {
+    }
+    var HTMLSegundoComponenteElement: {
+        prototype: HTMLSegundoComponenteElement;
+        new (): HTMLSegundoComponenteElement;
+    };
     interface HTMLElementTagNameMap {
         "mi-primer-componente": HTMLMiPrimerComponenteElement;
         "my-component": HTMLMyComponentElement;
+        "segundo-componente": HTMLSegundoComponenteElement;
     }
 }
 declare namespace LocalJSX {
     interface MiPrimerComponente {
+        "idioma"?: string;
     }
     interface MyComponent {
         /**
@@ -58,9 +69,12 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface SegundoComponente {
+    }
     interface IntrinsicElements {
         "mi-primer-componente": MiPrimerComponente;
         "my-component": MyComponent;
+        "segundo-componente": SegundoComponente;
     }
 }
 export { LocalJSX as JSX };
@@ -69,6 +83,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mi-primer-componente": LocalJSX.MiPrimerComponente & JSXBase.HTMLAttributes<HTMLMiPrimerComponenteElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "segundo-componente": LocalJSX.SegundoComponente & JSXBase.HTMLAttributes<HTMLSegundoComponenteElement>;
         }
     }
 }

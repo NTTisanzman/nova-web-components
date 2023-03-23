@@ -6,9 +6,14 @@
     <title>Stencil Component Starter</title>
 
     <script type="module" src="/build/componentes.esm.js"></script>
+    <script src=".\web-component.js"></script>
     <script nomodule src="/build/componentes.js"></script>
   </head>
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <my-component first="Stncil" last="'Don't call me a framework' JS"></my-component>
+    <mi-primer-componente idioma="Español">
+      <h1 slot="pepe">Pepito</h1>
+    </mi-primer-componente>
+    <my-component></my-component>
   </body>
 </html>
