@@ -12,10 +12,6 @@ export namespace Components {
     }
     interface MiCabecera {
     }
-    interface MiInput {
-        "inputValue": string;
-        "placeHolder": string;
-    }
     interface MiTabla {
         "buttonText": string;
         "disabledButtonText": string;
@@ -27,10 +23,6 @@ export namespace Components {
 export interface MiBotonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMiBotonElement;
-}
-export interface MiInputCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLMiInputElement;
 }
 declare global {
     interface HTMLMiBotonElement extends Components.MiBoton, HTMLStencilElement {
@@ -45,12 +37,6 @@ declare global {
         prototype: HTMLMiCabeceraElement;
         new (): HTMLMiCabeceraElement;
     };
-    interface HTMLMiInputElement extends Components.MiInput, HTMLStencilElement {
-    }
-    var HTMLMiInputElement: {
-        prototype: HTMLMiInputElement;
-        new (): HTMLMiInputElement;
-    };
     interface HTMLMiTablaElement extends Components.MiTabla, HTMLStencilElement {
     }
     var HTMLMiTablaElement: {
@@ -60,23 +46,16 @@ declare global {
     interface HTMLElementTagNameMap {
         "mi-boton": HTMLMiBotonElement;
         "mi-cabecera": HTMLMiCabeceraElement;
-        "mi-input": HTMLMiInputElement;
         "mi-tabla": HTMLMiTablaElement;
     }
 }
 declare namespace LocalJSX {
     interface MiBoton {
         "disabledButtonText"?: string;
-        "onButtonDisabled"?: (event: MiBotonCustomEvent<any>) => void;
         "onButtonPressed"?: (event: MiBotonCustomEvent<any>) => void;
         "texto"?: string;
     }
     interface MiCabecera {
-    }
-    interface MiInput {
-        "inputValue"?: string;
-        "onInputChanged"?: (event: MiInputCustomEvent<any>) => void;
-        "placeHolder"?: string;
     }
     interface MiTabla {
         "buttonText"?: string;
@@ -88,7 +67,6 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "mi-boton": MiBoton;
         "mi-cabecera": MiCabecera;
-        "mi-input": MiInput;
         "mi-tabla": MiTabla;
     }
 }
@@ -98,7 +76,6 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "mi-boton": LocalJSX.MiBoton & JSXBase.HTMLAttributes<HTMLMiBotonElement>;
             "mi-cabecera": LocalJSX.MiCabecera & JSXBase.HTMLAttributes<HTMLMiCabeceraElement>;
-            "mi-input": LocalJSX.MiInput & JSXBase.HTMLAttributes<HTMLMiInputElement>;
             "mi-tabla": LocalJSX.MiTabla & JSXBase.HTMLAttributes<HTMLMiTablaElement>;
         }
     }

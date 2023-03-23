@@ -10,10 +10,13 @@
     <script nomodule src="/build/componentes.js"></script>
   </head>
   <body>
-    <my-component first="Stncil" last="'Don't call me a framework' JS"></my-component>
-    <mi-primer-componente idioma="Español">
-      <h1 slot="pepe">Pepito</h1>
-    </mi-primer-componente>
-    <my-component></my-component>
+    <mi-cabecera>
+      <h3 slot="titulo">Hola</h3>
+      <img slot="imagen" src=".\assets\images\perro.jpg">
+    </mi-cabecera>
+    <mi-tabla indice-title="Índice" nombre-title="Nombre" dni-title="Identificación"/ button-text="Añadir" disabled-button-text="Cargando...">
   </body>
+  <!--
+    modificar el archivo stencil.config.ts y poner srcDir: 'src', para que las imagenes las saque de esa ruta
+  -->
 </html>
