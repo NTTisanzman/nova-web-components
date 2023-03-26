@@ -10,11 +10,9 @@ class FirstComponentElement extends HTMLElement {
         console.log("Hola")
 
         let italics = document.createElement("i");
-        italics.innerHTML = this.saludo;
+        italics.innerHTML = this.saludar;
 
-        this.innerHTML = this.saludar;
-
-        this.appendChild(bold);
+        this.innerHTML = italics;
 
 
         /** Descomentar para ver el disconnectedCallback
