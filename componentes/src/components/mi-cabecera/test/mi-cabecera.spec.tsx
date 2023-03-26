@@ -1,18 +1,18 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { SegundoComponente } from '../segundo-componente';
+import { MiCabecera } from '../mi-cabecera';
 
-describe('segundo-componente', () => {
+describe('mi-cabecera', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [SegundoComponente],
-      html: `<segundo-componente></segundo-componente>`,
+      components: [MiCabecera],
+      html: `<mi-cabecera></mi-cabecera>`,
     });
     expect(page.root).toEqualHtml(`
-      <segundo-componente>
+      <mi-cabecera>
         <mock:shadow-root>
           <slot></slot>
         </mock:shadow-root>
-      </segundo-componente>
+      </mi-cabecera>
     `);
   });
 });

@@ -1,0 +1,24 @@
+:host {
+  display: block;
+  padding: 0px 32px;
+  border: 1px solid red;
+  
+  
+}
+
+.mi-cabecera-container {
+  display: flex;
+  flex-direction: row;   
+  align-items: center;
+}
+::slotted([slot="titulo"]) {
+  font-weight: bold;
+  font-size: 32px;
+  font-family: "Arial";
+  margin-right: 32px;
+}
+
+::slotted([slot="imagen"]) {
+  height: 50px;
+  width: 50px;
+}
