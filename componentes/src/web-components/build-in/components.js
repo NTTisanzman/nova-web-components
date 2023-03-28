@@ -1,5 +1,4 @@
 class BotonCargarElement extends HTMLButtonElement {
-
     constructor() {
         super();
 
@@ -75,5 +74,7 @@ class BotonSimpleElement extends HTMLElement {
     }
 }
 
-window.customElements.define("boton-cargar", BotonCargarElement, {extends: "button"});
+window.customElements.define("boton-cargar", BotonCargarElement, {
+    extends: "button"
+});
 window.customElements.define("boton-simple", BotonSimpleElement)

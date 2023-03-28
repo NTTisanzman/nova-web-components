@@ -6,8 +6,6 @@ class BotonCargarElement extends HTMLElement {
         this.texto = "Texto"
         this._onClickedButton = this._onClickedButton.bind(this);
 
-        this.counter = 0;
-
 
     }
 
@@ -18,7 +16,7 @@ class BotonCargarElement extends HTMLElement {
         if (inputValue) {
             const options = {
                 detail: inputValue,
-                bubles: true,
+                bubbles: true,
                 composed: true,
                 cancelable: true
             }

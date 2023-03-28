@@ -2,8 +2,7 @@ class BotonCargarElement extends HTMLButtonElement {
 
     constructor() {
         super();
-
-        this.loadingText = "Loading..."
+        
         this._onClickedButton = this._onClickedButton.bind(this);
 
         this.counter = 0;
@@ -34,17 +33,6 @@ class BotonCargarElement extends HTMLButtonElement {
     disconnectedCallback() {
         this.removeEventListener("click", this._onClickedButton)
     }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        if (name === "loadingtext") {
-            this.loadingText = newValue;
-        }
-    }
-
-    static get observedAttributes() {
-        return ['loadingtext'];
-    }
-
 }
 
 window.customElements.define("boton-cargar", BotonCargarElement, {extends: "button"});
